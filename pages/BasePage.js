@@ -80,8 +80,8 @@ export default class BasePage {
         }
     }
 
-    async wait() {
-        await new Promise(r => setTimeout(r, time))
+    async wait(time) {
+        return await new Promise(r => setTimeout(r, time))
     }
 
 }
