@@ -13,7 +13,7 @@ describe('Iniciar sesion en la pagina', () => {
     })
 
     it('debera llenar los campos', async () => {
-        await loginPage.login('user@phptravels.com', 'demouser')
+        await loginPage.login('Jonh', 'demouser')
     }, 20000)
 
 

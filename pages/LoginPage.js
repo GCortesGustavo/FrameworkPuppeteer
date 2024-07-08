@@ -6,13 +6,13 @@ export default class LoginPage extends BasePage {
         super()
         this.navBar = "//div[@class='menu-wrapper']"
         this.inputEmail = "input[placeholder='Email']"
-        this.inputPassword = "input[placeholder='Password']"
+        this.inputPassword = "#login > div:nth-child(2) > input"
         this.submitButton = '(//button[1][@type="submit"])[1]'
         this.loginPageText = "//h2[contains(text(),'Hi,')]"
     }
 
     async visit() {
-        await page.goto('https://phptravels.net/login')
+        await page.goto('https://demo.testim.io/')
         await page.waitForXPath(this.navBar)
         const url = this.getUrl()
 
