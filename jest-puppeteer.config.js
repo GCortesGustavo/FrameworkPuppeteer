@@ -2,7 +2,7 @@
 
 module.exports = {
     launch: {
-        headless: false,
+        headless: true,
         slowMo: 100,
         defaultViewport: null,
     },

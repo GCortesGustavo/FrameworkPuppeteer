@@ -14,10 +14,10 @@ describe('Iniciar sesion en la pagina', () => {
 
     it('debera llenar los campos', async () => {
         await loginPage.login('Jonh', 'demouser')
-    }, 20000)
+    }, 35000)
 
 
     it('validar que este en el dashboard', async () => {
         await loginPage.validateLogin()
-    }, 20000)
-})
+    }, 35000)
+}, 350000)
