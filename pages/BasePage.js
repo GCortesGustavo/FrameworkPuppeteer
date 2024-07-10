@@ -48,9 +48,13 @@ export default class BasePage {
         try {
             await page.waitForSelector(selector)
             await page.click(selector)
-        } catch (error) {
-            throw new Error(`Error al dar click al selector ${selector}`)
-        }
+        } catch (e) {
+            try {
+                const element = await page.waitForXPath(selector)
+                await element.click(selector)
+            } catch (e) {
+                throw new Error(`Error al dar click al selector ${selector}`)
+            }        }
     }
 
     async type(selector, text, opts= {}) {
@@ -62,7 +66,7 @@ export default class BasePage {
         }
     }
 
-    async doublecLICK(selector) {
+    async doubleClick(selector) {
         try {
             await page.waitForSelector(selector)
             await page.click(selector, {clickCount: 2})

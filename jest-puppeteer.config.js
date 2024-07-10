@@ -2,8 +2,8 @@
 
 module.exports = {
     launch: {
-        headless: true,
-        slowMo: 100,
+        headless: false,
+        slowMo: 300,
         defaultViewport: null,
     },
     browserContext : "default"
