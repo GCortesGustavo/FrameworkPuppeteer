@@ -1,4 +1,3 @@
-import puppeteer from 'puppeteer';
 import LoginPage from '../pages/LoginPage';
 
 let browser;
@@ -7,22 +6,16 @@ let loginPage;
 
 describe('Iniciar sesion en la pagina', () => {
     beforeAll(async () => {
-        browser = await puppeteer.launch();
-        page = await browser.newPage();
         loginPage = new LoginPage(page);
-    });
-
-    afterAll(async () => {
-        await browser.close();
     });
 
     it('debera ir a la pagina', async () => {
         await loginPage.visit();
-    });
+    }, 350000);
 
     it('debera llenar los campos', async () => {
-        await loginPage.login('Jonh', 'demouser');
-    }, 35000);
+        await loginPage.login('gustiplatzi934@gmail.com', 'puppeteer2024');
+    }, 350000);
 
     it('validar que este en el dashboard', async () => {
         await loginPage.validateLogin();

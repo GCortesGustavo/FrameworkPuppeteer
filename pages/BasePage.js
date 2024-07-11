@@ -60,7 +60,7 @@ export default class BasePage {
     async type(selector, text, opts= {}) {
         try {
             await page.waitForSelector(selector)
-            await page.type(selector, text.opts)
+            await page.type(selector, text, opts)
         } catch (error) {
             throw new Error(`Error al escribir en el selector ${selector}`)
         }

@@ -3,15 +3,15 @@ import BasePage from "./BasePage";
 export default class LoginPage extends BasePage {
     constructor() {
         super();
-        this.navBar = '#app > div > section.Login__login___3HOEm > div > div.flexboxgrid__col-xs-6___1DhV6.Login__card-box___1pKg0';
-        this.inputEmail = '#login > div:nth-child(1) > input';
-        this.inputPassword = '#login > div:nth-child(2) > input';
-        this.submitButton = '#app > div > section:nth-child(3) > div > div:nth-child(2) > div > nav > button:nth-child(2)';
-        this.loginPageText = '#app > div > header > div > div:nth-child(2) > ul > div > button > span:nth-child(1)';
+        this.navBar = '#fadein > header';
+        this.inputEmail = '#email';
+        this.inputPassword = '#password';
+        this.submitButton = '#submitBTN';
+        this.loginPageText = '#fadein > main > div > div > div > div.pt-3 > div > div > div > div.w-100.text-center.mt-3 > h6 > strong';
     }
 
     async visit() {
-        await page.goto('https://demo.testim.io/login');
+        await page.goto('https://phptravels.net/login');
         await page.waitForSelector(this.navBar);
         const url = this.getUrl();
         console.log('Visitando URL ', url);
