@@ -3,12 +3,18 @@ import BasePage from "./BasePage";
 export default class FlightsPage extends BasePage {
     constructor() {
         super();
-        this.navBar = '#fadein > header';
-        this.inputEmail = '#email';
-        this.inputPassword = '#password';
-        this.submitButton = '#submitBTN';
-        this.loginPageText = '#fadein > main > div > div > div > div.pt-3 > div > div > div > div.w-100.text-center.mt-3 > h6 > strong';
-    }
+        this.inputs = {
+            from: "//input[@name='from' and @id='autocomplete']",
+            to: "//input[@name='to' and @id='autocomplete2']",
+            date: "//input[@class='depart form-control', and @id='departure']", 
+            
+            passenger: "//a[@class='dropdown-toggle dropdown-btn waves-effect' and @role='button']",
+            search: "//button[@id='flights-search']",
+            firstOption: ".autocomplete-result[data-index='0']",
+            moreAdultsPassengers: "(//i[@class='la la-plus'])[1]" 
+
+        }
+        }
 
     async visit() {
         await page.goto('https://phptravels.net/login');
