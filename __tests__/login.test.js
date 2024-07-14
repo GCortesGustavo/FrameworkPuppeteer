@@ -1,6 +1,5 @@
 import LoginPage from '../pages/LoginPage';
 
-let browser;
 let page;
 let loginPage;
 
